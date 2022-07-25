@@ -1,0 +1,61 @@
+﻿@model CourseFeatures
+
+
+<form class="form-control">
+    <div class="mb-3">
+        <label class="form-label">Course Title</label>
+        <div>
+            @Model.Course.Title
+        </div>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Start</label>
+        <p>
+            @Model.Start
+        </p>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Language</label>
+        <p>
+            @Model.Language
+        </p>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Students</label>
+        <p>
+            @Model.Students
+        </p>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">ClassDuration</label>
+        <p>
+            @Model.ClassDuration
+        </p>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Duration</label>
+        <p>
+            @Model.Duration
+        </p>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">CourseFee</label>
+        <p>
+            @Model.CourseFee
+        </p>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">SkillLevel</label>
+        <p>
+            @Model.SkillLevel
+        </p>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Assesments</label>
+        <p>
+            @Model.Assesments
+        </p>
+    </div>
+
+    <a asp-action="CourseFeaturesList" asp-controller="CourseFeatures" asp-area="Admin" class="btn btn-light">Cancel</a>
+</form>

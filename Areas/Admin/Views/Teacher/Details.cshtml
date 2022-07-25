@@ -1,0 +1,71 @@
+﻿@model Teacher
+
+<form class="form-control">
+    <div class="mb-3">
+        <label class="form-label">Fullname</label>
+        <p>
+            @Model.Fullname
+        </p>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">AboutMe</label>
+        <p>
+            @Model.AboutMe
+        </p>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Degree</label>
+        <p>
+            @Model.Degree
+        </p>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Faculty</label>
+        <p>
+            @Model.Faculty
+        </p>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Hobbies</label>
+        <p>
+            @Model.Hobbies
+        </p>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">MakeACall</label>
+        <p>
+            @Model.MakeACall
+        </p>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Skype</label>
+        <p>
+            @Model.Skype
+        </p>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Work</label>
+        <p>
+            @Model.Work
+        </p>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Mail</label>
+        <p>
+            @Model.Mail
+        </p>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Experience</label>
+        <p>
+            @Model.Experience
+        </p>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Image</label>
+        <div style="width: 100px; height: 100px; border: 1px dashed grey; border-radius: 100px;">
+            <img style="width: 100px; height: 100px; border-radius:100px;" src="~/img/teacher/@Model.Image" />
+        </div>
+    </div>
+    <a asp-action="TeacherList" asp-controller="Teacher" asp-area="Admin" class="btn btn-light">Cancel</a>
+</form>

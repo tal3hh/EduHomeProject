@@ -1,0 +1,45 @@
+﻿@model Event
+
+<h3 style="text-align:center">Yeni Event Elave Etme</h3>
+
+<form method="post" asp-action="Create" asp-area="Admin" asp-controller="Event" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label asp-for="Title" class="form-label">Title:</label>
+        <input asp-for="Title" type="text" class="form-control" />
+
+    </div>
+    <div class="mb-3">
+        <label asp-for="Description" class="form-label">Description:</label>
+        <input asp-for="Description" type="text" class="form-control" />
+
+    </div>
+    <div class="mb-3">
+        <label asp-for="Location" class="form-label">Location:</label>
+        <input asp-for="Location" type="text" class="form-control" />
+
+    </div>
+    <div class="mb-3">
+        <label asp-for="StartDate" class="form-label">StartDate:</label>
+        <input asp-for="StartDate" type="text" class="form-control" />
+
+    </div>
+    <div class="mb-3">
+        <label asp-for="EndDate" class="form-label">EndDate:</label>
+        <input asp-for="EndDate" type="text" class="form-control" />
+
+    </div>
+    <div class="mb-3">
+        <label asp-for="Photo" class="form-label">Photo:</label>
+        <input asp-for="Photo" class="form-control" style="width:300px;" />
+
+    </div>
+    <div class="text-danger" asp-validation-summary="All">
+
+    </div>
+    <br />
+    <div class="d-flex">
+        <button class="btn btn-primary">Elave Et</button>
+
+        <a asp-action="EventList" asp-controller="Event" asp-area="Admin" class="btn btn-light">Cancel</a>
+    </div>
+</form>

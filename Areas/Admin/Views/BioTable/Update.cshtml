@@ -1,0 +1,35 @@
+﻿@model BioTable
+
+<h3 style="text-align:center">BioTable Update</h3>
+
+<form method="post" asp-action="Update" asp-area="Admin" asp-controller="BioTable">
+    <div class="mb-3">
+        <label asp-for="Adress" class="form-label">Adress:</label>
+        <input asp-for="Adress" type="text" class="form-control" />
+
+    </div>
+    <div class="mb-3">
+        <label asp-for="Email" class="form-label">Email:</label>
+        <input asp-for="Email" type="email" class="form-control" />
+
+    </div>
+    <div class="mb-3">
+        <label asp-for="SiteLink" class="form-label">SiteLink:</label>
+        <input asp-for="SiteLink" type="text" class="form-control" />
+
+    </div>
+    <div class="mb-3">
+        <label asp-for="PhoneNumber" class="form-label">PhoneNumber:</label>
+        <input asp-for="PhoneNumber" type="number" class="form-control" />
+
+    </div>
+    <div class="text-danger" asp-validation-summary="All">
+
+    </div>
+    <br />
+    <div class="d-flex">
+        <button class="btn btn-primary">Yenile</button>
+
+        <a asp-action="BioTableList" asp-controller="BioTable" asp-area="Admin" class="btn btn-light">Cancel</a>
+    </div>
+</form>

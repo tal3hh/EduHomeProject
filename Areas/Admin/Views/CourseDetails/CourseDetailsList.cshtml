@@ -1,0 +1,41 @@
+﻿@model List<CourseDetails>
+<h3 style="text-align: center">CourseDetails Table</h3>
+
+    <a asp-action="Create" asp-controller="CourseDetails" asp-area="Admin" class="btn btn-primary" style="float: right">Create</a>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Course Title:</th>
+                <th>About:</th>
+                <th>Certificate:</th>
+                <th>HowToApply:</th>
+                <th>CourseCount:</th>
+                <th>Duzenleme</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @for (int i = 0; i < Model.Count; i++)
+            {
+            <tr>
+                <td>@(i+1)</td>
+                <td>@Model[i].Course.Title</td>
+                <td>@Model[i].About</td>
+                <td>@Model[i].Certificate</td>
+                <td>@Model[i].HowToApply</td>
+                <td>@Model[i].CourseCount</td>
+                <td>
+                    <div class="d-flex">
+                        <a class="btn btn-dark" asp-action="Details" asp-controller="CourseDetails" asp-area="Admin" asp-route-id="@Model[i].Id">Details</a>
+
+                        <a class="btn btn-warning" asp-action="Update" asp-controller="CourseDetails" asp-area="Admin" asp-route-id="@Model[i].Id">Update</a>
+
+                        <a class="btn btn-danger" asp-action="Delete" asp-controller="CourseDetails" asp-area="Admin" asp-route-id="@Model[i].Id">Delete</a>
+                    </div>
+                </td>
+            </tr>
+            }
+
+        </tbody>
+    </table>

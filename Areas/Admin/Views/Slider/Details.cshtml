@@ -1,0 +1,24 @@
+﻿@model Slider
+
+
+<form class="form-control">
+    <div class="mb-3">
+        <label class="form-label">Title</label>
+        <div>
+            @Model.Title
+        </div>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Description</label>
+        <p>
+            @Model.Description
+        </p>
+    </div>
+    <div class="mb-3">
+        <label class="form-label" >Image</label>
+        <div style="width: 100px; height: 100px; border: 1px dashed grey; border-radius: 100px;">
+            <img style="width: 100px; height: 100px; border-radius:100px;" src="~/img/slider/@Model.Image" />
+        </div>
+    </div>
+    <a asp-action="SliderList" asp-controller="Slider" asp-area="Admin" class="btn btn-light">Cancel</a>
+</form>

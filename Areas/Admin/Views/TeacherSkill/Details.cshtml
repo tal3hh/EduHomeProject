@@ -1,0 +1,18 @@
+﻿@model TeacherSkill
+
+
+<form class="form-control">
+    <div class="mb-3">
+        <label class="form-label">Teacher Fullname:</label>
+        <div>
+            @Model.Teacher.Fullname
+        </div>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Skill Name:</label>
+        <p>
+            @Model.Skill.Name
+        </p>
+    </div>
+    <a asp-action="TeacherSkillList" asp-controller="TeacherSkill" asp-area="Admin" class="btn btn-light">Cancel</a>
+</form>

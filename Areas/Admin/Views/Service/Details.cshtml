@@ -1,0 +1,18 @@
+﻿@model Service
+
+
+<form class="form-control">
+    <div class="mb-3">
+        <label class="form-label">Title</label>
+        <div>
+            @Model.Title
+        </div>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Description</label>
+        <p>
+            @Model.Description
+        </p>
+    </div>
+    <a asp-action="ServiceList" asp-controller="Service" asp-area="Admin" class="btn btn-light">Cancel</a>
+</form>

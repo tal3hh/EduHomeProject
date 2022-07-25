@@ -1,0 +1,39 @@
+﻿@model List<TeacherSkill>
+
+<h3 style="text-align: center">TeacherSkill Table</h3>
+
+<a asp-action="Create" asp-controller="TeacherSkill" asp-area="Admin" class="btn btn-primary" style="float: right">Create</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Teacher Fullname :</th>
+            <th>Skill Name :</th>
+            <th>Skill Degree :</th>
+            <th>Duzenleme</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            <tr>
+                <td>@(i+1)</td>
+                <td>@Model[i].Teacher.Fullname</td>
+                <td>@Model[i].Skill.Name</td>
+                <td>@Model[i].Degree</td>
+                <td>
+                    <div class="d-flex">
+                        <a class="btn btn-dark" asp-action="Details" asp-controller="TeacherSkill" asp-area="Admin" asp-route-id="@Model[i].Id">Details</a>
+
+                        <a class="btn btn-warning" asp-action="Update" asp-controller="TeacherSkill" asp-area="Admin" asp-route-id="@Model[i].Id">Update</a>
+
+                        <a class="btn btn-danger" asp-action="Delete" asp-controller="TeacherSkill" asp-area="Admin" asp-route-id="@Model[i].Id">Delete</a>
+                    </div>
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>

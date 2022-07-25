@@ -1,0 +1,30 @@
+﻿@model Contact
+
+
+<form class="form-control">
+    <div class="mb-3">
+        <label class="form-label">Name</label>
+        <div>
+            @Model.Name
+        </div>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Eamil</label>
+        <p>
+            @Model.Eamil
+        </p>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Subject</label>
+        <p>
+            @Model.Subject
+        </p>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Message</label>
+        <p>
+            @Model.Message
+        </p>
+    </div>
+    <a asp-action="ContactList" asp-controller="Contact" asp-area="Admin" class="btn btn-light">Cancel</a>
+</form>

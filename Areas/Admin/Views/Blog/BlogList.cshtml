@@ -1,0 +1,43 @@
+﻿@model List<Blog>
+
+<h3 style="text-align: center">Blog Table</h3>
+
+<a asp-action="Create" asp-controller="Blog" asp-area="Admin" class="btn btn-primary" style="float: right">Create</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Title :</th>
+            <th>Image :</th>
+            <th>TeacherName :</th>
+            <th>Description :</th>
+            <th>CommentCount :</th>
+            <th>Duzenleme</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (int i = 0; i < Model.Count; i++)
+        {
+        <tr>
+            <td>@(i+1)</td>
+            <td>@Model[i].Title</td>
+            <td>
+                <img style="width:100px; height:100px;" src="~/img/blog/@Model[i].Image" />
+            </td>
+            <td>@Model[i].TeacherName</td>
+            <td>@Model[i].Description</td>
+            <td>@Model[i].CommentCount</td>
+            <td>
+                <div class="d-flex">
+                    <a class="btn btn-dark" asp-action="Details" asp-controller="Blog" asp-area="Admin" asp-route-id="@Model[i].Id">Details</a>
+
+                    <a class="btn btn-warning" asp-action="Update" asp-controller="Blog" asp-area="Admin" asp-route-id="@Model[i].Id">Update</a>
+
+                    <a class="btn btn-danger" asp-action="Delete" asp-controller="Blog" asp-area="Admin" asp-route-id="@Model[i].Id">Delete</a>
+                </div>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

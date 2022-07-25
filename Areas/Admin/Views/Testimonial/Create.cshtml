@@ -1,0 +1,30 @@
+﻿@model Testimonial
+
+<h3 style="text-align:center">Yeni Testimonial Elave Etme</h3>
+
+<form method="post" asp-action="Create" asp-area="Admin" asp-controller="Testimonial">
+    <div class="mb-3">
+        <label asp-for="Fullname" class="form-label">Fullname :</label>
+        <input asp-for="Fullname" type="text" class="form-control" />
+
+    </div>
+    <div class="mb-3">
+        <label asp-for="Description" class="form-label">Description :</label>
+        <input asp-for="Description" type="text" class="form-control" />
+
+    </div>
+    <div class="mb-3">
+        <label asp-for="Work" class="form-label">Work :</label>
+        <input asp-for="Work" type="text" class="form-control" />
+
+    </div>2
+    <div class="text-danger" asp-validation-summary="All">
+
+    </div>
+    <br />
+    <div class="d-flex">
+        <button class="btn btn-primary">Elave Et</button>
+
+        <a asp-action="TestimonialList" asp-controller="Testimonial" asp-area="Admin" class="btn btn-light">Cancel</a>
+    </div>
+</form>

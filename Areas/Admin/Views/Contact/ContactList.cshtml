@@ -1,0 +1,39 @@
+﻿@model List<Contact>
+
+<h3 style="text-align: center">About Table</h3>
+
+<a asp-action="Create" asp-controller="Contact" asp-area="Admin" class="btn btn-primary" style="float: right">Create</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Name :</th>
+            <th>Eamil :</th>
+            <th>Subject :</th>
+            <th>Message :</th>
+            <th>Duzenleme</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            <tr>
+                <td>@(i+1)</td>
+                <td>@Model[i].Name</td>
+                <td>@Model[i].Eamil</td>
+                <td>@Model[i].Subject</td>
+                <td>@Model[i].Message</td>
+                <td>
+                    <div class="d-flex">
+                        <a class="btn btn-dark" asp-action="Details" asp-controller="Contact" asp-area="Admin" asp-route-id="@Model[i].Id">Details</a>
+
+                        <a class="btn btn-warning" asp-action="Update" asp-controller="Contact" asp-area="Admin" asp-route-id="@Model[i].Id">Update</a>
+
+                        <a class="btn btn-danger" asp-action="Delete" asp-controller="Contact" asp-area="Admin" asp-route-id="@Model[i].Id">Delete</a>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

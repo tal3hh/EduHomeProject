@@ -1,0 +1,20 @@
+﻿@model TagTable
+
+<h3 style="text-align:center">TagTable Update</h3>
+
+<form method="post" asp-action="Update" asp-area="Admin" asp-controller="TagTable">
+    <div>
+        <label asp-for="Name" class="form-label">Name :</label><br />
+        <input asp-for="Name" type="text" class="form-control" />
+    </div>
+    <div class="text-danger" asp-validation-summary="All">
+
+    </div>
+    <br />
+
+    <div class="d-flex">
+        <button class="btn btn-primary">Yenile</button>
+
+        <a asp-action="TagTableList" asp-controller="TagTable" asp-area="Admin" class="btn btn-light">Cancel</a>
+    </div>
+</form>

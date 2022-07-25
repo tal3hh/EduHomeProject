@@ -1,0 +1,19 @@
+﻿@model Social
+
+<h3 style="text-align:center">Yeni Social Elave Etme</h3>
+
+<form method="post" asp-action="Create" asp-area="Admin" asp-controller="Social">
+    <div class="mb-3">
+        <label asp-for="Icon" class="form-label">Icon:</label>
+        <input asp-for="Icon" type="text" class="form-control" />
+    </div>
+    <div class="text-danger" asp-validation-summary="All">
+
+    </div>
+    <br />
+    <div class="d-flex">
+        <button class="btn btn-primary">Elave Et</button>
+
+        <a asp-action="SocialList" asp-controller="Social" asp-area="Admin" class="btn btn-light">Cancel</a>
+    </div>
+</form>

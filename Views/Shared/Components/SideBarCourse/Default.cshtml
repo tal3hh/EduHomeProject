@@ -1,0 +1,69 @@
+﻿@model (List<Course> courses, List<Blog> blogs, List<TagTable> tags)
+
+
+<div class="col-md-4">
+    <div class="blog-sidebar right">
+        <div class="single-blog-widget mb-50">
+            <h3>search</h3>
+            <div class="blog-search">
+                <form id="search" asp-action="CourseSearch" asp-controller="Course">
+                    <input type="search" placeholder="Search..." name="search" />
+                    <button type="submit">
+                        <span><i class="fa fa-search"></i></span>
+                    </button>
+                </form>
+            </div>
+        </div>
+        <!-- Courses -->
+        <div class="single-blog-widget mb-50">
+            <h3>courses</h3>
+            <ul>
+                @foreach (var course in Model.courses.Take(6))
+                {
+                    <li><a asp-action="CourseDetails" asp-controller="Course" asp-route-id="@course.Id">@course.Title</a></li>
+                }
+            </ul>
+        </div>
+
+        <!-- Best Education -->
+        <div class="single-blog-widget mb-50">
+            <div class="single-blog-banner">
+                <a asp-action="Index" asp-controller="Home" id="blog"><img src="~/img/blog/blog-img.jpg" alt="blog"></a>
+                <h2>En Gozel<br> Tehsil<br> Obyekti</h2>
+            </div>
+        </div>
+
+        <!-- Blog Post -->
+        <div class="single-blog-widget mb-50">
+            <h3>Blog post</h3>
+            @foreach (var blog in Model.blogs.Take(3))
+            {
+                <div class="single-post mb-30">
+                    <div class="single-post-img">
+                        <a asp-action="BlogDetails" asp-controller="Blog" asp-route-id="@blog.Id">
+                            <img src="~/img/post/post1.jpg" alt="post">
+                            <div class="blog-hover">
+                                <i class="fa fa-link"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="single-post-content">
+                        <h4><a asp-action="BlogDetails" asp-controller="Blog" asp-route-id="@blog.Id">@blog.Title</a></h4>
+                        <p>@blog.TeacherName  /  @blog.Date.ToString("MMMM dd, yyyy")</p>
+                    </div>
+                </div>}
+
+            <!-- TagTable -->
+            <div class="single-blog-widget">
+                <h3>tags</h3>
+                <div class="single-tag">
+                    @foreach (var tag in Model.tags)
+                    {
+                        
+                        <a asp-action="Index" asp-controller="@tag.Name" class="mr-10 mb-10">@tag.Name</a>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

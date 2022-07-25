@@ -1,0 +1,100 @@
+﻿@model (Course course, List<Course> courses, List<Blog> blogs, List<TagTable> tags, Contact contact)
+<!-- Banner Area Start -->
+<div class="banner-area-wrapper">
+    <div class="banner-area text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="banner-content-wrapper">
+                        <div class="banner-content">
+                            <h2>courses details</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Banner Area End -->
+<!-- Blog Start -->
+<div class="courses-details-area blog-area pt-150 pb-140">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="courses-details">
+                    <div class="courses-details-img">
+                        <img src="~/img/course/@Model.course.Image" alt="courses-details">
+                    </div>
+                    <div class="course-details-content">
+                        <h2>@Model.course.Title</h2>
+                        <p>@Model.course.Description</p>
+                        <div class="course-details-left">
+                            <div class="single-course-left">
+                                <h3>about course</h3>
+                                <p>@Model.course.CourseDetails.About</p>
+                            </div>
+                            <div class="single-course-left">
+                                <h3>how to apply</h3>
+                                <p>@Model.course.CourseDetails.HowToApply</p>
+                            </div>
+                            <div class="single-course-left">
+                                <h3>certification</h3>
+                                <p class="margin">@Model.course.CourseDetails.Certificate</p>
+
+                            </div>
+                        </div>
+                        <div class="course-details-right">
+                            <h3>COURSE FEATURES</h3>
+                            <ul>
+                                <li>starts <span>@Model.course.CourseFeatures.Start</span></li>
+                                <li>duration <span>@Model.course.CourseFeatures.Duration</span></li>
+                                <li>class duration <span>@Model.course.CourseFeatures.ClassDuration</span></li>
+                                <li>skill level <span>@Model.course.CourseFeatures.SkillLevel</span></li>
+                                <li>language <span>@Model.course.CourseFeatures.Language</span></li>
+                                <li>students <span>@Model.course.CourseFeatures.Students</span></li>
+                                <li>assesments <span>@Model.course.CourseFeatures.Assesments</span></li>
+                            </ul>
+                            <h3 class="red">course fee: @Model.course.CourseFeatures.CourseFee AZN</h3>
+                        </div>
+                    </div>
+
+                    <div class="reply-area">
+                        <h3>LEAVE A message</h3>
+                        <p>I must explain to you how all this a mistaken idea of ncing great explorer of the rut the is lder of human happinescias unde omnis iste natus error sit volptatem </p>
+                        <form id="contact-form" asp-action="CourseDetails" asp-controller="Course" method="post">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p>Name</p> <span asp-validation-for="contact.Name" class="text-danger"></span>
+                                    <input type="text" asp-for="contact.Name">
+                                </div>
+                                <div class="col-md-12">
+                                    <p>Email</p> <span asp-validation-for="contact.Eamil" class="text-danger"></span>
+                                    <input type="email" asp-for="contact.Eamil">
+                                </div>
+                                <div class="col-md-12">
+                                    <p>Subject</p> <span asp-validation-for="contact.Subject" class="text-danger"></span>
+                                    <input type="text" asp-for="contact.Subject">
+                                    <p>Massage</p> <span asp-validation-for="contact.Message" class="text-danger"></span>
+                                    <textarea asp-for="contact.Message" cols="15" rows="10"></textarea>
+                                </div>
+                            </div>
+                            <br />
+                            <div>
+                                <button type="submit" class="btn btn-warning"><span>Gonder Mesaji</span></button>
+                            </div>
+                            <div class="text-danger" asp-validation-summary="All">
+
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            @await Component.InvokeAsync("SideBarCourse")
+        </div>
+    </div>
+</div>
+<!-- Blog End -->
+<!-- Subscribe Start -->
+@await Component.InvokeAsync("Subscribe")

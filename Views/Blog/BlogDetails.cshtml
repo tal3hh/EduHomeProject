@@ -1,0 +1,76 @@
+﻿@model (Blog blog, Contact contact)
+<!-- Banner Area Start -->
+<div class="banner-area-wrapper">
+    <div class="banner-area text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="banner-content-wrapper">
+                        <div class="banner-content">
+                            <h2>blog details</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Banner Area End -->
+<!-- Blog Start -->
+<div class="blog-details-area pt-150 pb-140">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="blog-details">
+                    <div class="blog-details-img">
+                        <img src="~/img/blog/@Model.blog.Image" alt="blog-details">
+                    </div>
+                    <div class="blog-details-content">
+                        <h2>@Model.blog.Title</h2>
+                        <h6>@Model.blog.TeacherName  /  @Model.blog.Date.ToString("dd MMMM, yyyy")  /  <i class="fa fa-comments-o"></i> @Model.blog.CommentCount</h6>
+                        <p>
+                            @Model.blog.Description
+                        </p>
+                    </div>
+
+                    <div class="reply-area">
+                        <h3>LEAVE A message</h3>
+                        <p>I must explain to you how all this a mistaken idea of ncing great explorer of the rut the is lder of human happinescias unde omnis iste natus error sit volptatem </p>
+                        <form id="contact-form" asp-action="BlogDetails" asp-controller="Blog" method="post">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p>Name</p> <span asp-validation-for="contact.Name" class="text-danger"></span>
+                                    <input type="text" asp-for="contact.Name">
+                                </div>
+                                <div class="col-md-12">
+                                    <p>Email</p> <span asp-validation-for="contact.Eamil" class="text-danger"></span>
+                                    <input type="email" asp-for="contact.Eamil">
+                                </div>
+                                <div class="col-md-12">
+                                    <p>Subject</p> <span asp-validation-for="contact.Subject" class="text-danger"></span>
+                                    <input type="text" asp-for="contact.Subject">
+                                    <p>Massage</p> <span asp-validation-for="contact.Message" class="text-danger"></span>
+                                    <textarea asp-for="contact.Message" cols="15" rows="10"></textarea>
+                                </div>
+                            </div>
+                            <br />
+                            <div>
+                                <button type="submit" class="btn btn-warning"><span>Gonder Mesaji</span></button>
+                            </div>
+                            <div class="text-danger" asp-validation-summary="All">
+
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            @await Component.InvokeAsync("SideBarCourse")
+
+        </div>
+    </div>
+</div>
+<!-- Blog End -->
+<!-- Subscribe Start -->
+@await Component.InvokeAsync("Subscribe")

@@ -1,0 +1,35 @@
+﻿@model Contact
+
+<h3 style="text-align:center">Yeni Contact Elave Etme</h3>
+
+<form method="post" asp-action="Create" asp-area="Admin" asp-controller="Contact">
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label">Name:</label>
+        <input asp-for="Name" type="text" class="form-control" />
+
+    </div>
+    <div class="mb-3">
+        <label asp-for="Eamil" class="form-label">Eamil:</label>
+        <input asp-for="Eamil" type="email" class="form-control" />
+
+    </div>
+    <div class="mb-3">
+        <label asp-for="Subject" class="form-label">Subject:</label>
+        <input asp-for="Subject" type="text" class="form-control" />
+
+    </div>
+    <div class="mb-3">
+        <label asp-for="Message" class="form-label">Message:</label>
+        <input asp-for="Message" type="text" class="form-control" />
+
+    </div>
+    <div class="text-danger" asp-validation-summary="All">
+
+    </div>
+    <br />
+    <div class="d-flex">
+        <button class="btn btn-primary">Elave Et</button>
+
+        <a asp-action="ContactList" asp-controller="Contact" asp-area="Admin" class="btn btn-light">Cancel</a>
+    </div>
+</form>

@@ -1,0 +1,23 @@
+﻿@model (EventTeacher eventTeacher, List<Teacher> teachers, List<Event> events)
+
+<h3 style="text-align:center">Yeni EventTeacher Elave Etme</h3>
+
+<form method="post" asp-action="Create" asp-area="Admin" asp-controller="EventTeacher">
+    <div class="mb-3">
+        <label class="form-label">Teacher Fullname:</label>
+        <select class="form-select" asp-for="eventTeacher.TeacherId" asp-items="@(new SelectList(Model.teachers, "Id", "Fullname"));"></select>
+
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Event Description:</label>
+        <select class="form-select" asp-for="eventTeacher.EventId" asp-items="@(new SelectList(Model.events, "Id", "Title"));"></select>
+
+    </div>
+    <br />
+    <div class="d-flex">
+        <input type="hidden" asp-for="eventTeacher.Id" />
+        <button class="btn btn-primary">Elave Et</button>
+
+        <a asp-action="EventTeacherList" asp-controller="EventTeacher" asp-area="Admin" class="btn btn-light">Cancel</a>
+    </div>
+</form>

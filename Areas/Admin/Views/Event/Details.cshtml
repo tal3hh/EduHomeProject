@@ -1,0 +1,36 @@
+﻿@model Event
+
+
+<form class="form-control">
+    <div class="mb-3">
+        <label class="form-label">Title</label>
+        <div>
+            @Model.Title
+        </div>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Description</label>
+        <p>
+            @Model.Description
+        </p>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Location</label>
+        <p>
+            @Model.Location
+        </p>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">StartDate</label>
+        <p>
+            @Model.StartDate
+        </p>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">EndDate</label>
+        <p>
+            @Model.EndDate
+        </p>
+    </div>
+    <a asp-action="EventList" asp-controller="Event" asp-area="Admin" class="btn btn-light">Cancel</a>
+</form>

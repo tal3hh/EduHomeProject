@@ -1,0 +1,29 @@
+﻿@model (TeacherSkill teacherSkill, List<Teacher> teachers, List<Skill> skills)
+
+<h3 style="text-align:center">Yeni TeacherSkill Elave Etme</h3>
+
+<form method="post" asp-action="Create" asp-area="Admin" asp-controller="TeacherSkill">
+    <div class="mb-3">
+        <label class="form-label">Teacher Fullname:</label>
+        <select class="form-select" asp-for="teacherSkill.TeacherId" asp-items="@(new SelectList(Model.teachers, "Id", "Fullname"));"></select>
+
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Skill Name:</label>
+        <select class="form-select" asp-for="teacherSkill.SkillId" asp-items="@(new SelectList(Model.skills, "Id", "Name"));"></select>
+
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Degree :</label>
+        <input class="form-control" asp-for="teacherSkill.Degree" type="number" />
+
+    </div>
+    
+    <br />
+    <div class="d-flex">
+        <input type="hidden" asp-for="teacherSkill.Id" />
+        <button class="btn btn-primary">Elave Et</button>
+
+        <a asp-action="TeacherSkillList" asp-controller="TeacherSkill" asp-area="Admin" class="btn btn-light">Cancel</a>
+    </div>
+</form>

@@ -1,0 +1,59 @@
+﻿@model Teacher
+
+<h3 style="text-align:center">Yeni Teacher Elave Etme</h3>
+
+<form method="post" asp-action="Create" asp-area="Admin" asp-controller="Teacher" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label asp-for="Fullname" class="form-label">Fullname:</label>
+        <input asp-for="Fullname" type="text" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="AboutMe" class="form-label">AboutMe:</label>
+        <input asp-for="AboutMe" type="text" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Work" class="form-label">Work:</label>
+        <input asp-for="Work" type="text" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Degree" class="form-label">Degree:</label>
+        <input asp-for="Degree" type="text" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Experience" class="form-label">Experience:</label>
+        <input asp-for="Experience" type="text" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Hobbies" class="form-label">Hobbies:</label>
+        <input asp-for="Hobbies" type="text" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Faculty" class="form-label">Faculty:</label>
+        <input asp-for="Faculty" type="text" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Mail" class="form-label">Mail:</label>
+        <input asp-for="Mail" type="text" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="MakeACall" class="form-label">MakeACall:</label>
+        <input asp-for="MakeACall" type="text" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Skype" class="form-label">Skype:</label>
+        <input asp-for="Skype" type="text" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Photo" class="form-label">Photo</label>
+        <input asp-for="Photo" class="form-control" style="width:300px"/>
+    </div>
+    <div class="text-danger" asp-validation-summary="All">
+
+    </div>
+    <br />
+    <div class="d-flex">
+        <button class="btn btn-primary">Elave Et</button>
+
+        <a asp-action="TeacherList" asp-controller="Teacher" asp-area="Admin" class="btn btn-light">Cancel</a>
+    </div>
+</form>

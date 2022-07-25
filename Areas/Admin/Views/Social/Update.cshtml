@@ -1,0 +1,20 @@
+﻿@model Social
+
+<h3 style="text-align:center">Social Update</h3>
+
+<form method="post" asp-action="Update" asp-area="Admin" asp-controller="Social">
+    <div>
+        <label asp-for="Icon" class="form-label">Icon :</label><br />
+        <input asp-for="Icon" type="text" class="form-control" />
+    </div>
+    <div class="text-danger" asp-validation-summary="All">
+
+    </div>
+    <br />
+
+    <div class="d-flex">
+        <button class="btn btn-primary">Yenile</button>
+
+        <a asp-action="SocialList" asp-controller="Social" asp-area="Admin" class="btn btn-light">Cancel</a>
+    </div>
+</form>

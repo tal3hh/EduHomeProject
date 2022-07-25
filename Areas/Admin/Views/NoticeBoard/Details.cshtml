@@ -1,0 +1,11 @@
+﻿@model NoticeBoard
+
+<form class="form-control">
+    <div class="mb-3">
+        <label class="form-label">Description</label>
+        <p>
+            @Model.Description
+        </p>
+    </div>
+    <a asp-action="NoticeBoardList" asp-controller="NoticeBoard" asp-area="Admin" class="btn btn-light">Cancel</a>
+</form>

@@ -1,0 +1,29 @@
+﻿@model Subscribee
+
+<h3 style="text-align:center">Subscribee Update</h3>
+
+<form method="post" asp-action="Update" asp-area="Admin" asp-controller="Subcribee">
+    <div class="d-flex">
+        <div>
+            <label asp-for="Email" class="form-label">Email :</label><br />
+            <input asp-for="Email" type="text" class="form-control" />
+        </div>
+        <div class="form-check">
+
+            <input class="form-check-input" type="checkbox" asp-for="IsActived" id="flexCheckDefault">
+            <label class="form-check-label" asp-for="IsActived" for="flexCheckDefault">
+                IsActived
+            </label>
+        </div>
+    </div>
+    <div class="text-danger" asp-validation-summary="All">
+
+    </div>
+    <br />
+
+    <div class="d-flex">
+        <button class="btn btn-primary">Yenile</button>
+
+        <a asp-action="Index" asp-controller="Subcribee" asp-area="Admin" class="btn btn-light">Cancel</a>
+    </div>
+</form>

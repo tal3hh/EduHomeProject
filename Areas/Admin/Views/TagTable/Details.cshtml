@@ -1,0 +1,11 @@
+﻿@model TagTable
+
+<form class="form-control">
+    <div class="mb-3">
+        <label class="form-label">Name</label>
+        <p>
+            @Model.Name
+        </p>
+    </div>
+    <a asp-action="TagTableList" asp-controller="TagTable" asp-area="Admin" class="btn btn-light">Cancel</a>
+</form>

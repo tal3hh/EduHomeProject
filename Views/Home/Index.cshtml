@@ -1,0 +1,203 @@
+﻿@model (List<Service> services, List<Slider> sliders, List<Course> courses, List<Event> events, List<Testimonial> testimonials, List<Blog> blogs)
+
+
+<!-- Background Area Start -->
+<section id="slider-container" class="slider-area two">
+    <div class="slider-owl owl-theme owl-carousel">
+        <!-- Start Slingle Slide -->
+        @for (int i = 0; i < Model.sliders.Count; i++)
+        {
+<div class="single-slide item" style="background-image: url(img/slider/@Model.sliders[i].Image)">
+
+    <!-- Start Slider Content -->
+    <div class="slider-content-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="slide-content-wrapper">
+                        <div class="slide-content text-center">
+                            <h2>@Model.sliders[i].Title </h2>
+                            <p>@Model.sliders[i].Description </p>
+                            <a class="default-btn" asp-action="Index" asp-controller="Course">Learn more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Start Slider Content -->
+</div>      }
+    </div>
+</section>
+<!-- Background Area End -->
+<!-- Service Start -->
+<div class="service-area two pt-150 pb-150">
+    <div class="container">
+        <div class="row">
+            @for (int i = 0; i < Model.services.Count; i++)
+            {
+<div class="col-md-4 col-sm-4 col-xs-12">
+    <div class="single-service">
+        <h3><a href="teacher.html">@Model.services[i].Title</a></h3>
+        <p>@Model.services[i].Description </p>
+    </div>
+</div>      }
+
+        </div>
+    </div>
+</div>
+<!-- Service End -->
+<!-- About Start -->
+<div class="about-area pb-155">
+    <div class="container">
+        @await Component.InvokeAsync("About")
+    </div>
+</div>
+<!-- About End -->
+<!-- Courses Area Start -->
+<div class="courses-area two pt-150 pb-150 text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="section-title">
+                    <img src="~/img/icon/section1.png" alt="section-title">
+                    <h2>COURSES WE OFFER</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+
+            @foreach (var course in Model.courses.Take(3))
+            {
+<div class="col-md-4 col-sm-6 col-xs-12">
+    <div class="single-course">
+        <div class="course-img">
+            <a asp-action="CourseDetails" asp-controller="Course" asp-route-id="@course.Id">
+                <img src="~/img/course/course1.jpg" alt="course">
+                <div class="course-hover">
+                    <i class="fa fa-link"></i>
+                </div>
+            </a>
+        </div>
+        <div class="course-content">
+            <h3><a asp-action="CourseDetails" asp-controller="Course" asp-route-id="@course.Id">@course.Title</a></h3>
+            <p>@course.Description</p>
+            <a class="default-btn" asp-action="CourseDetails" asp-controller="Course" asp-route-id="@course.Id">read more</a>
+        </div>
+    </div>
+</div>            }
+        </div>
+    </div>
+</div>
+<!-- Courses Area End -->
+<!-- Notice Start -->
+<section class="notice-area two pt-140">
+    <div class="container">
+        @await Component.InvokeAsync("NoticeBoard")
+    </div>
+</section>
+<!-- Notice End -->
+<!-- Event Area Start -->
+<div class="event-area two text-center pt-100 pb-145">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="section-title">
+                    <img src="~/img/icon/section.png" alt="section-title">
+                    <h2>UPCOMMING EVENTS</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            @foreach (var item in Model.events.Take(4))
+            {
+<div class="col-md-6 col-sm-12 col-xs-12">
+    <div class="single-event mb-35">
+        <div class="event-img">
+            <a asp-action="EventDetails" asp-controller="Event" asp-route-id="@item.Id"><img src="~/img/event/event1.jpg" alt="event"></a>
+        </div>
+        <div class="event-content text-left">
+            <h3>@item.Date.ToString("dd MMMM")</h3>
+            <h4><a asp-action="EventDetails" asp-controller="Event" asp-route-id="@item.Id">@item.Title</a></h4>
+            <ul>
+                <li><i class="fa fa-clock-o"></i>@item.StartDate AM - @item.EndDate PM</li>
+                <li><i class="fa fa-map-marker"></i>@item.Location</li>
+            </ul>
+            <div class="event-content-right">
+                <a class="default-btn" asp-action="EventDetails" asp-controller="Event" asp-route-id="@item.Id">join now</a>
+            </div>
+        </div>
+    </div>
+</div>}
+
+        </div>
+    </div>
+</div>
+<!-- Event Area End -->
+<!-- Testimonial Area Start -->
+@foreach (var item in Model.testimonials.Take(2))
+{
+<div class="testimonial-area pt-110 pb-105 text-center">
+    <div class="container">
+        <div class="row">
+            <div class="testimonial-owl owl-theme owl-carousel">
+                <div class="col-md-8 col-md-offset-2 col-sm-12">
+                    <div class="single-testimonial">
+                        <div class="testimonial-info">
+                            <div class="testimonial-img">
+                                <img src="~/img/testimonial/testimonial.jpg" alt="testimonial">
+                            </div>
+                            <div class="testimonial-content">
+                                <p>@item.Description</p>
+                                <h4>@item.Fullname</h4>
+                                <h5>@item.Work</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>}
+<!-- Testimonial Area End -->
+<!-- Blog Area Start -->
+<div class="blog-area pt-150 pb-150">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="section-title text-center">
+                    <img src="~/img/icon/section.png" alt="section-title">
+                    <h2>LATEST FROM BLOG</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            @foreach (var blog in Model.blogs.Take(3))
+            {
+<div class="col-md-4 col-sm-6 col-xs-12">
+    <div class="single-blog">
+        <div class="blog-img">
+            <a asp-action="BlogDetails" asp-controller="blog" asp-route-id="@blog.Id"><img src="~/img/blog/blog1.jpg" alt="blog"></a>
+            <div class="blog-hover">
+                <a asp-action="BlogDetails" asp-controller="blog" asp-route-id="@blog.Id"><i class="fa fa-link"></i></a>
+            </div>
+        </div>
+        <div class="blog-content">
+            <div class="blog-top">
+                <p>@blog.TeacherName  /  @blog.Date.ToString("dd MMMM")  /  <i class="fa fa-comments-o"></i> @blog.CommentCount</p>
+            </div>
+            <div class="blog-bottom">
+                <h2><a asp-action="BlogDetails" asp-controller="blog" asp-route-id="@blog.Id">@blog.Title </a></h2>
+                <a asp-action="BlogDetails" asp-controller="blog" asp-route-id="@blog.Id">read more</a>
+            </div>
+        </div>
+    </div>
+</div>}
+
+        </div>
+    </div>
+</div>
+<!-- Blog Area End -->
+
+<!-- Subscribe Start -->
+@await Component.InvokeAsync("Subscribe")

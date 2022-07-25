@@ -1,0 +1,20 @@
+﻿@model List<About>
+
+
+<div class="row">
+    @foreach (var about in Model)
+    {
+        <div class="col-md-6 col-sm-6">
+            <div class="about-content">
+                <h2>@about.Title</h2>
+                <p>@about.Description</p>
+                <a class="default-btn" asp-action="Index" asp-controller="Course">view courses</a>
+            </div>
+        </div>
+      <div class="col-md-6 col-sm-6">
+          <div class="about-img">
+              <img src="~/img/about/about.png" alt="about">
+          </div>
+      </div>
+      }
+</div>

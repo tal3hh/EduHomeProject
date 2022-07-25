@@ -1,0 +1,19 @@
+﻿@model NoticeBoard
+
+<h3 style="text-align:center">Yeni NoticeBoard Elave Etme</h3>
+
+<form method="post" asp-action="Create" asp-area="Admin" asp-controller="NoticeBoard">
+    <div class="mb-3">
+        <label asp-for="Description" class="form-label">Description:</label>
+        <input asp-for="Description" type="text" class="form-control" />
+    </div>
+    <div class="text-danger" asp-validation-summary="All">
+
+    </div>
+    <br />
+    <div class="d-flex">
+        <button class="btn btn-primary">Elave Et</button>
+
+        <a asp-action="NoticeBoardList" asp-controller="NoticeBoard" asp-area="Admin" class="btn btn-light">Cancel</a>
+    </div>
+</form>

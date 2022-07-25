@@ -1,0 +1,24 @@
+﻿@model Testimonial
+
+
+<form class="form-control">
+    <div class="mb-3">
+        <label class="form-label">Fullname</label>
+        <div>
+            @Model.Fullname
+        </div>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Description</label>
+        <p>
+            @Model.Description
+        </p>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Work</label>
+        <p>
+            @Model.Work
+        </p>
+    </div>
+    <a asp-action="TestimonialList" asp-controller="Testimonial" asp-area="Admin" class="btn btn-light">Cancel</a>
+</form>

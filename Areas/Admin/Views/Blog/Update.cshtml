@@ -1,0 +1,33 @@
+﻿@model Blog
+
+<h3 style="text-align:center">Blog Update</h3>
+
+<form method="post" asp-action="Update" asp-area="Admin" asp-controller="Blog" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label asp-for="Title" class="form-label">Title:</label>
+        <input asp-for="Title" type="text" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Description" class="form-label">Description:</label>
+        <input asp-for="Description" type="text" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="TeacherName" class="form-label">TeacherName:</label>
+        <input asp-for="TeacherName" type="text" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="CommentCount" class="form-label">CommentCount:</label>
+        <input asp-for="CommentCount" type="number" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Photo">Photo</label>
+        <input class="form-control" style="width:300px" asp-for="Photo">
+    </div>
+    <br />
+
+    <div class="d-flex">
+        <button class="btn btn-primary">Yenile</button>
+
+        <a asp-action="BlogList" asp-controller="Blog" asp-area="Admin" class="btn btn-light">Cancel</a>
+    </div>
+</form>

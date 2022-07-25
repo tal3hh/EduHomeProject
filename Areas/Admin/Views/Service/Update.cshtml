@@ -1,0 +1,24 @@
+﻿@model Service
+
+<h3 style="text-align:center">Service Update</h3>
+
+<form method="post" asp-action="Update" asp-area="Admin" asp-controller="Service">
+    <div>
+        <label asp-for="Title" class="form-label">Title :</label><br />
+        <input asp-for="Title" type="text" class="form-control" />
+    </div>
+    <div>
+        <label asp-for="Description" class="form-label">Description :</label><br />
+        <input asp-for="Description" type="text" class="form-control" />
+    </div>
+    <div class="text-danger" asp-validation-summary="All">
+
+    </div>
+    <br />
+
+    <div class="d-flex">
+        <button class="btn btn-primary">Yenile</button>
+
+        <a asp-action="ServiceList" asp-controller="Service" asp-area="Admin" class="btn btn-light">Cancel</a>
+    </div>
+</form>

@@ -1,0 +1,21 @@
+﻿@model (TeacherSkill teacherSkill, List<Teacher> teachers,List<Skill> skills)
+
+<h3 style="text-align:center">TeacherSkill Update</h3>
+
+<form method="post" asp-action="Update" asp-area="Admin" asp-controller="TeacherSkill">
+    <div>
+        <label class="form-label">Teacher Fullname :</label><br />
+        <select class="form-select" asp-for="teacherSkill.TeacherId" asp-items="@(new SelectList(Model.teachers, "Id", "Fullname"));"></select>
+    </div>
+    <div>
+        <label class="form-label">Skill Name :</label><br />
+        <select class="form-select" asp-for="teacherSkill.SkillId" asp-items="@(new SelectList(Model.skills, "Id", "Name"));"></select>
+        <br />
+
+        <div class="d-flex">
+            <input type="hidden" asp-for="teacherSkill.Id"/>
+            <button class="btn btn-primary">Yenile</button>
+
+            <a asp-action="TeacherSkillList" asp-controller="TeacherSkill" asp-area="Admin" class="btn btn-light">Cancel</a>
+        </div>
+</form>

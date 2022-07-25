@@ -1,0 +1,55 @@
+﻿@model List<Teacher>
+
+<h3 style="text-align: center">Skill Table</h3>
+
+<a asp-action="Create" asp-controller="Teacher" asp-area="Admin" class="btn btn-primary" style="float: right">Create</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Fullname :</th>
+            <th>Image :</th>
+            <th>AboutMe :</th>
+            <th>Work :</th>
+            <th>Degree :</th>
+            <th>Experience :</th>
+            <th>Hobbies :</th>
+            <th>Faculty :</th>
+            <th>Mail :</th>
+            <th>MakeACall :</th>
+            <th>Skype :</th>
+            <th>Duzenleme</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            <tr>
+                <td>@(i+1)</td>
+                <td>@Model[i].Fullname</td>
+                <td>
+                    <img style="height:100px;width:100px;" src="~/img/teacher/@Model[i].Image"/>
+                </td>
+                <td>@Model[i].AboutMe</td>
+                <td>@Model[i].Work</td>
+                <td>@Model[i].Degree</td>
+                <td>@Model[i].Experience</td>
+                <td>@Model[i].Hobbies</td>
+                <td>@Model[i].Faculty</td>
+                <td>@Model[i].Mail</td>
+                <td>@Model[i].MakeACall</td>
+                <td>@Model[i].Skype</td>
+                <td>
+                    <div class="d-flex">
+                        <a class="btn btn-dark" asp-action="Details" asp-controller="Teacher" asp-area="Admin" asp-route-id="@Model[i].Id">Details</a>
+
+                        <a class="btn btn-warning" asp-action="Update" asp-controller="Teacher" asp-area="Admin" asp-route-id="@Model[i].Id">Update</a>
+
+                        <a class="btn btn-danger" asp-action="Delete" asp-controller="Teacher" asp-area="Admin" asp-route-id="@Model[i].Id">Delete</a>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

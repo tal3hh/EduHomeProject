@@ -1,0 +1,37 @@
+﻿@model CourseDetails
+
+
+<form class="form-control">
+    <div class="mb-3">
+        <label class="form-label">Course Title</label>
+        <div>
+            @Model.Course.Title
+        </div>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">About</label>
+        <p>
+            @Model.About
+        </p>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Certificate</label>
+        <p>
+            @Model.Certificate
+        </p>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">HowToApply</label>
+        <p>
+            @Model.HowToApply
+        </p>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">CourseCount</label>
+        <p>
+            @Model.CourseCount
+        </p>
+    </div>
+
+    <a asp-action="CourseDetailsList" asp-controller="CourseDetails" asp-area="Admin" class="btn btn-light">Cancel</a>
+</form>

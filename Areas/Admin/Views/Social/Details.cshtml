@@ -1,0 +1,11 @@
+﻿@model Social
+
+<form class="form-control">
+    <div class="mb-3">
+        <label class="form-label">Icon</label>
+        <p>
+            @Model.Icon
+        </p>
+    </div>
+    <a asp-action="SocialList" asp-controller="Social" asp-area="Admin" class="btn btn-light">Cancel</a>
+</form>
